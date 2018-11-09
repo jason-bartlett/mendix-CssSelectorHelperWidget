@@ -86,25 +86,25 @@
 			update: function (obj, callback) {
 				dojo.empty(this.domNode);
 
-				if (!obj) { 
+				if (!obj) {
 					callback && callback();
 					return;
 				}
 
 				this._mxobj = obj;
 
-				if (this.subscribeTo == 'Attribute') {
-					this.subscribe({
-						guid: obj.getGuid(),
-						attr: this.attributeContainingValue,
-						callback: this.setupAttribute
-					});  
-				} else {
-					this.subscribe({
-						guid: obj.getGuid(),
-						callback: this.setupAttribute
-					});
-				}
+
+				this.subscribe({
+					guid: obj.getGuid(),
+					attr: this.attributeContainingValue,
+					callback: this.setupAttribute
+				});
+
+				this.subscribe({
+					guid: obj.getGuid(),
+					callback: this.setupAttribute
+				});
+
 
 				this.setupAttribute();
 
