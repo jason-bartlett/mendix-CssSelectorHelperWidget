@@ -7,4 +7,3 @@ test/.project
 *.lock
 test/zip Progress Bar.bat
 .idea/
-node_modules
